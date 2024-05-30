@@ -63,7 +63,7 @@ function Form({ route, method }) {
                 {name}
             </button>
             <button type="button" onClick={handleToggle} className="form-button-lower">
-                {method === "login" ? "Register" : "Login"}
+                {name === "Login" ? "Register" : "Login"}
             </button>
         </form>
     );
