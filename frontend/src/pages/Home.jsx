@@ -3,6 +3,7 @@ import api from "../api";
 import Note from "../components/Note"
 import "../styles/Home.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from "react-bootstrap/Button";
 
 function Home() {
     const [notes, setNotes] = useState([]);
@@ -51,6 +52,7 @@ function Home() {
         <div>
             <div>
                 <h2>Notes</h2>
+                <Button>Test Button</Button>
                 {notes.map((note) => (
                     <Note note={note} onDelete={deleteNote} key={note.id} />
                 ))}
