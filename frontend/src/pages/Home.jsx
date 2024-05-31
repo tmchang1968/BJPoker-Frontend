@@ -4,6 +4,7 @@ import Note from "../components/Note"
 import "../styles/Home.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from "react-bootstrap/Button";
+import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
 
 function Home() {
     const [notes, setNotes] = useState([]);
@@ -88,9 +89,9 @@ function Home() {
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">created_at</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -101,12 +102,7 @@ function Home() {
 
                 {/*# (id: 2)*/}
                 {notes.map((note) => (
-                    <tr key={note.id}>
-                        <th scope="row">{note.id}</th>
-                        <td>{note.title}</td>
-                        <td>{note.content}</td>
-                        <td>@mdo</td>
-                    </tr>
+                    <UserInfoTableRow note={note} onDelete={deleteNote} key={note.id} />
                 ))}
                 </tbody>
             </table>
