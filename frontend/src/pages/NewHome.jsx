@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import Note from "../components/Note"
-import "../styles/Home.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from "react-bootstrap/Button";
 import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
 
-function Home() {
+function NewHome() {
     const [notes, setNotes] = useState([]);
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
@@ -110,4 +109,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default NewHome;
