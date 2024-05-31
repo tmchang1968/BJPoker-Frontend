@@ -10,8 +10,13 @@ function NewHome() {
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
 
+    const [userInfos, setUserInfos] = useState([]);
+    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
+
     useEffect(() => {
         getNotes();
+        getUserInfos();
     }, []);
 
     const getNotes = () => {
@@ -20,6 +25,16 @@ function NewHome() {
             .then((res) => res.data)
             .then((data) => {
                 setNotes(data);
+                console.log(data);
+            })
+            .catch((err) => alert(err));
+    };
+    const getUserInfos = () => {
+        api
+            .get("/api/user-info/")
+            .then((res) => res.data)
+            .then((data) => {
+                setUserInfos(data);
                 console.log(data);
             })
             .catch((err) => alert(err));
