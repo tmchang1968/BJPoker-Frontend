@@ -50,9 +50,9 @@ function NewHome() {
             })
             .catch((error) => alert(error));
     };
-    const deleteUserInfos = (id) => {
+    const deleteUserInfos = (user_no) => {
         api
-            .delete(`/api/user-info/delete/${id}/`)
+            .delete(`/api/user-info/delete/${user_no}/`)
             .then((res) => {
                 if (res.status === 204) alert("UserInfo deleted!");
                 else alert("Failed to delete userInfo.");
@@ -120,6 +120,8 @@ function NewHome() {
             {/*</form>*/}
 
             {/*# (id: 1)*/}
+
+            <h2>User Infos</h2>
             <table className="table">
                 <thead>
                 <tr>
@@ -137,7 +139,7 @@ function NewHome() {
 
                 {/*# (id: 2)*/}
                 {notes.map((note) => (
-                    <UserInfoTableRow note={note} onDelete={deleteNote} key={note.id} />
+                    <UserInfoTableRow note={note} onDelete={deleteNote} key={note.user_no} />
                 ))}
                 </tbody>
             </table>
