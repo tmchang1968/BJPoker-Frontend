@@ -50,6 +50,16 @@ function NewHome() {
             })
             .catch((error) => alert(error));
     };
+    const deleteUserInfos = (id) => {
+        api
+            .delete(`/api/user-info/delete/${id}/`)
+            .then((res) => {
+                if (res.status === 204) alert("UserInfo deleted!");
+                else alert("Failed to delete userInfo.");
+                getUserInfos();
+            })
+            .catch((error) => alert(error));
+    };
 
     const createNote = (e) => {
         e.preventDefault();
@@ -59,6 +69,17 @@ function NewHome() {
                 if (res.status === 201) alert("Note created!");
                 else alert("Failed to make note.");
                 getNotes();
+            })
+            .catch((err) => alert(err));
+    };
+    const createUserInfo = (e) => {
+        e.preventDefault();
+        api
+            .post("/api/user-info/", { userName, userEmail })
+            .then((res) => {
+                if (res.status === 201) alert("UserInfo created!");
+                else alert("Failed to make userInfo.");
+                getUserInfos();
             })
             .catch((err) => alert(err));
     };
