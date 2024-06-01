@@ -19,6 +19,19 @@ function UserInfoTableRow({ userInfo, onDelete }) {
             <th scope="row">{userInfo.user_no}</th>
             <td>{userInfo.user_name}</td>
             <td>{userInfo.user_email}</td>
+            <td>{userInfo.user_birthyear}</td>
+            <td>{userInfo.user_birthmonth}</td>
+            <td>{userInfo.user_birthday}</td>
+            <td>{userInfo.user_azurerole}</td>
+            <td>{userInfo.user_blackrole}</td>
+            <td>{userInfo.user_professionarea}</td>
+            <td>{userInfo.user_workforunit}</td>
+            <td>{userInfo.user_title}</td>
+            <td>{userInfo.user_sociallinkedin}</td>
+            <td>{userInfo.user_socialtwitter}</td>
+            <td>{userInfo.user_socialfacebook}</td>
+            <td>{userInfo.user_note}</td>
+            <td>{userInfo.user_info_id}</td>
             <td>{formattedDate}</td>
         </tr>
     );

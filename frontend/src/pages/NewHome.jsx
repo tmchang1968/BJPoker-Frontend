@@ -125,9 +125,22 @@ function NewHome() {
             <table className="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Content</th>
+                    <th scope="col">use_no</th>
+                    <th scope="col">name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">birthyear</th>
+                    <th scope="col">birthmonth</th>
+                    <th scope="col">birthday</th>
+                    <th scope="col">azurerole</th>
+                    <th scope="col">blackrole</th>
+                    <th scope="col">professionarea</th>
+                    <th scope="col">workforunit</th>
+                    <th scope="col">title</th>
+                    <th scope="col">sociallinkedin</th>
+                    <th scope="col">socialtwitter</th>
+                    <th scope="col">socialfacebook</th>
+                    <th scope="col">note</th>
+                    <th scope="col">info_id</th>
                     <th scope="col">created_at</th>
                 </tr>
                 </thead>
