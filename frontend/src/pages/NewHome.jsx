@@ -13,6 +13,19 @@ function NewHome() {
     const [userInfos, setUserInfos] = useState([]);
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
+    const [userBirthyear, setUserBirthyear] = useState("");
+    const [userbirthmonth, setUserBirthmonth] = useState("");
+    const [userbirthday, setUserBirthday] = useState("");
+    const [userAzurerole, setUserAzurerole] = useState("");
+    const [userBlackrole, setUserBlackrole] = useState("");
+    const [userProfessionArea, setUserProfessionArea] = useState("");
+    const [userWorkForUnit, setUserWorkForUnit] = useState("");
+    const [userTitle, setUserTitle] = useState("");
+    const [userSocialLinkedin, setUserSocialLinkedin] = useState("");
+    const [userSocialTwitter, setUserSocialTwitter] = useState("");
+    const [userSocialFacebook, setUserSocialFacebookSocialFacebook] = useState("");
+    const [userNote, setUserNote] = useState("");
+
 
     useEffect(() => {
         getNotes();
@@ -75,7 +88,7 @@ function NewHome() {
     const createUserInfo = (e) => {
         e.preventDefault();
         api
-            .post("/api/user-info/", { userName, userEmail })
+            .post("/api/user-info/", { userName, userEmail , userBirthyear , userbirthmonth , userbirthday , userAzurerole , userBlackrole , userProfessionArea , userWorkForUnit , userTitle , userSocialLinkedin , userSocialTwitter , userSocialFacebook , userNote })
             .then((res) => {
                 if (res.status === 201) alert("UserInfo created!");
                 else alert("Failed to make userInfo.");
@@ -94,30 +107,30 @@ function NewHome() {
                 ))}
             </div>
             {/*# (id: 1) Input Form*/}
-            {/*<h2>Create a Note</h2>*/}
-            {/*<form onSubmit={createNote}>*/}
-            {/*    <label htmlFor="title">Title:</label>*/}
-            {/*    <br />*/}
-            {/*    <input*/}
-            {/*        type="text"*/}
-            {/*        id="title"*/}
-            {/*        name="title"*/}
-            {/*        required*/}
-            {/*        onChange={(e) => setTitle(e.target.value)}*/}
-            {/*        value={title}*/}
-            {/*    />*/}
-            {/*    <label htmlFor="content">Content:</label>*/}
-            {/*    <br />*/}
-            {/*    <textarea*/}
-            {/*        id="content"*/}
-            {/*        name="content"*/}
-            {/*        required*/}
-            {/*        value={content}*/}
-            {/*        onChange={(e) => setContent(e.target.value)}*/}
-            {/*    ></textarea>*/}
-            {/*    <br />*/}
-            {/*    <input type="submit" value="Submit"></input>*/}
-            {/*</form>*/}
+            <h2>Create a Note</h2>
+            <form onSubmit={createNote}>
+                <label htmlFor="title">Title:</label>
+                <br />
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    required
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                />
+                <label htmlFor="content">Content:</label>
+                <br />
+                <input
+                    id="content"
+                    name="content"
+                    required
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                ></input>
+                <br />
+                <input type="submit" value="Submit"></input>
+            </form>
 
             {/*# (id: 1)*/}
 
