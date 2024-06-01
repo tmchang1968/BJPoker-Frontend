@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
-import Note from "../components/Note"
 import { useNavigate } from "react-router-dom";
+import "../styles/NewHome.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from "react-bootstrap/Button";
 import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
