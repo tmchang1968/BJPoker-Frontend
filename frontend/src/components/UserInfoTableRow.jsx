@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/UserInfoTableRow.css"
 
-function UserInfoTableRow({ note, onDelete }) {
-    const formattedDate = new Date(note.created_at).toLocaleDateString("zh-TW")
+function UserInfoTableRow({ userInfo, onDelete }) {
+    const formattedDate = new Date(userInfo.created_at).toLocaleDateString("zh-TW")
+    // console.log(note)
 
     return (
         // <div className="note-container">
@@ -15,9 +16,9 @@ function UserInfoTableRow({ note, onDelete }) {
         // </div>
 
         <tr>
-            <th scope="row">{note.id}</th>
-            <td>{note.title}</td>
-            <td>{note.content}</td>
+            <th scope="row">{userInfo.user_no}</th>
+            <td>{userInfo.user_name}</td>
+            <td>{userInfo.user_email}</td>
             <td>{formattedDate}</td>
         </tr>
     );
