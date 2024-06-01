@@ -72,7 +72,9 @@ function Home() {
         <div>
             <div>
                 <Button onClick={() => handleLogout()}>Logout</Button>
-                <h2>BJ-Poker Users</h2>
+                <br/>
+                <br/>
+                <h2>[BJ-Poker Users]</h2>
 
             </div>
             <form onSubmit={createUserInfo}>
