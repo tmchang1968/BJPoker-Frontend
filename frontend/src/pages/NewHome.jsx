@@ -138,8 +138,8 @@ function NewHome() {
                 {/*))}*/}
 
                 {/*# (id: 2)*/}
-                {notes.map((note) => (
-                    <UserInfoTableRow note={note} onDelete={deleteNote} key={note.user_no} />
+                {userInfos.map((userInfo) => (
+                    <UserInfoTableRow userInfo={userInfo} onDelete={deleteNote} key={userInfo.user_no} />
                 ))}
                 </tbody>
             </table>
