@@ -2,7 +2,7 @@ import react from "react"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import NewHome from "./pages/NewHome"
+import Home from "./pages/Home.jsx"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from "./components/ProtectedRoute"
 
@@ -24,7 +24,7 @@ function App() {
           path="/"
           element={
             <ProtectedRoute>
-                <NewHome />
+                <Home />
             </ProtectedRoute>
           }
         />

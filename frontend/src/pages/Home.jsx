@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
-import "../styles/NewHome.css"
+import "../styles/Home.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from "react-bootstrap/Button";
 import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
 
-function NewHome() {
+function Home() {
     const [userInfos, setUserInfos] = useState([]);
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -134,4 +134,4 @@ function NewHome() {
     );
 }
 
-export default NewHome;
+export default Home;
