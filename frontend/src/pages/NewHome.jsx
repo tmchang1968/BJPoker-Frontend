@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import Note from "../components/Note"
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from "react-bootstrap/Button";
 import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
@@ -25,6 +26,7 @@ function NewHome() {
     const [userSocialTwitter, setUserSocialTwitter] = useState("");
     const [userSocialFacebook, setUserSocialFacebookSocialFacebook] = useState("");
     const [userNote, setUserNote] = useState("");
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -97,11 +99,16 @@ function NewHome() {
             .catch((err) => alert(err));
     };
 
+    const handleLogout = () => {
+        navigate("/logout");
+    };
+
+
     return (
         <div>
             <div>
+                <Button onClick={() => handleLogout()}>Logout</Button>
                 <h2>Notes</h2>
-                <Button>Test Button</Button>
                 {notes.map((note) => (
                     <Note note={note} onDelete={deleteNote} key={note.id} />
                 ))}
@@ -109,7 +116,7 @@ function NewHome() {
             {/*# (id: 1) Input Form*/}
             <h2>Create a Note</h2>
             <form onSubmit={createNote}>
-                <label htmlFor="title">Title:</label>
+                <label htmlFor="title">Name:</label>
                 <br />
                 <input
                     type="text"
@@ -119,7 +126,7 @@ function NewHome() {
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
                 />
-                <label htmlFor="content">Content:</label>
+                <label htmlFor="content">Email:</label>
                 <br />
                 <input
                     id="content"
