@@ -7,10 +7,6 @@ import Button from "react-bootstrap/Button";
 import UserInfoTableRow from "../components/UserInfoTableRow.jsx";
 
 function NewHome() {
-    const [notes, setNotes] = useState([]);
-    const [content, setContent] = useState("");
-    const [title, setTitle] = useState("");
-
     const [userInfos, setUserInfos] = useState([]);
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -30,20 +26,9 @@ function NewHome() {
 
 
     useEffect(() => {
-        getNotes();
         getUserInfos();
     }, []);
 
-    const getNotes = () => {
-        api
-            .get("/api/notes/")
-            .then((res) => res.data)
-            .then((data) => {
-                setNotes(data);
-                console.log(data);
-            })
-            .catch((err) => alert(err));
-    };
     const getUserInfos = () => {
         api
             .get("/api/user-info/")
@@ -55,16 +40,6 @@ function NewHome() {
             .catch((err) => alert(err));
     };
 
-    const deleteNote = (id) => {
-        api
-            .delete(`/api/notes/delete/${id}/`)
-            .then((res) => {
-                if (res.status === 204) alert("Note deleted!");
-                else alert("Failed to delete note.");
-                getNotes();
-            })
-            .catch((error) => alert(error));
-    };
     const deleteUserInfos = (user_no) => {
         api
             .delete(`/api/user-info/delete/${user_no}/`)
@@ -76,17 +51,6 @@ function NewHome() {
             .catch((error) => alert(error));
     };
 
-    const createNote = (e) => {
-        e.preventDefault();
-        api
-            .post("/api/notes/", { content, title })
-            .then((res) => {
-                if (res.status === 201) alert("Note created!");
-                else alert("Failed to make note.");
-                getNotes();
-            })
-            .catch((err) => alert(err));
-    };
     const createUserInfo = (e) => {
         e.preventDefault();
         api
@@ -108,38 +72,34 @@ function NewHome() {
         <div>
             <div>
                 <Button onClick={() => handleLogout()}>Logout</Button>
-                <h2>Notes</h2>
-                {notes.map((note) => (
-                    <Note note={note} onDelete={deleteNote} key={note.id} />
-                ))}
+                <h2>BJ-Poker Users</h2>
+
             </div>
-            {/*# (id: 1) Input Form*/}
-            <h2>Create a Note</h2>
-            <form onSubmit={createNote}>
-                <label htmlFor="title">Name:</label>
+            <form onSubmit={createUserInfo}>
+                <label htmlFor="userName">Name:</label>
                 <br />
                 <input
                     type="text"
-                    id="title"
-                    name="title"
+                    id="userName"
+                    name="userName"
                     required
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
+                    onChange={(e) => setUserName(e.target.value)}
+                    value={userName}
                 />
-                <label htmlFor="content">Email:</label>
+                <label htmlFor="userEmail">Email:</label>
                 <br />
                 <input
-                    id="content"
-                    name="content"
+                    type="text"
+                    id="userEmail"
+                    name="userEmail"
                     required
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
                 ></input>
                 <br />
                 <input type="submit" value="Submit"></input>
             </form>
 
-            {/*# (id: 1)*/}
 
             <h2>User Infos</h2>
             <table className="table">
@@ -165,14 +125,8 @@ function NewHome() {
                 </tr>
                 </thead>
                 <tbody>
-                {/*# (id: 2)*/}
-                {/*{notes.map((note) => (*/}
-                {/*    <Note note={note} onDelete={deleteNote} key={note.id} />*/}
-                {/*))}*/}
-
-                {/*# (id: 2)*/}
                 {userInfos.map((userInfo) => (
-                    <UserInfoTableRow userInfo={userInfo} onDelete={deleteNote} key={userInfo.user_no} />
+                    <UserInfoTableRow userInfo={userInfo} onDelete={deleteUserInfos} key={userInfo.user_no} />
                 ))}
                 </tbody>
             </table>
