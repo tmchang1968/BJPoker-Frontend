@@ -139,20 +139,20 @@ function NewHome() {
                 <thead>
                 <tr>
                     <th scope="col">use_no</th>
-                    <th scope="col">name</th>
-                    <th scope="col">email</th>
-                    <th scope="col">birthyear</th>
-                    <th scope="col">birthmonth</th>
-                    <th scope="col">birthday</th>
-                    <th scope="col">azurerole</th>
-                    <th scope="col">blackrole</th>
-                    <th scope="col">professionarea</th>
-                    <th scope="col">workforunit</th>
-                    <th scope="col">title</th>
-                    <th scope="col">sociallinkedin</th>
-                    <th scope="col">socialtwitter</th>
-                    <th scope="col">socialfacebook</th>
-                    <th scope="col">note</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Birthyear</th>
+                    <th scope="col">Birthmonth</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">Azurerole</th>
+                    <th scope="col">Blackrole</th>
+                    <th scope="col">Professionarea</th>
+                    <th scope="col">Workforunit</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Sociallinkedin</th>
+                    <th scope="col">Socialtwitter</th>
+                    <th scope="col">Socialfacebook</th>
+                    <th scope="col">Note</th>
                     <th scope="col">info_id</th>
                     <th scope="col">created_at</th>
                 </tr>
